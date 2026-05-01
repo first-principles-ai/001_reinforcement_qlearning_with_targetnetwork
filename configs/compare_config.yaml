@@ -1,0 +1,15 @@
+# ============================================================
+# Inverted Pendulum DQN — Comparison Plot Configuration
+# ============================================================
+compare:
+  run_1:
+    path: sim_results/sim_weights_target_network_1000ep.json
+    label: "1000 ep (target)"
+  run_2:
+    path: sim_results/sim_weights_target_2000ep_finetuned.json
+    label: "2000 ep finetuned (target)"
+  time_start: 0.0
+  time_end: 10.0
+  save_path: results/comparison_plot.png
+  dpi: 150
+  figure_size: [14, 10]

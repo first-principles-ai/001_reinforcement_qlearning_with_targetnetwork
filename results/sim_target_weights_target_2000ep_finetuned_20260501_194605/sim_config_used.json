@@ -1,0 +1,58 @@
+{
+  "simulation": {
+    "weights_file": "results/weights_target_2000ep_finetuned.json",
+    "episodes": 3,
+    "save_gif": null,
+    "record_path": "sim_results/sim_weights_target_network_1000ep.json",
+    "record_interval": 1
+  },
+  "physics": {
+    "cart_mass": 1.0,
+    "pole_mass": 0.1,
+    "pole_half_length": 0.5,
+    "gravity": 9.81,
+    "force_max": 10.0,
+    "timestep": 0.02
+  },
+  "environment": {
+    "max_steps": 500,
+    "angle_threshold_deg": 12.0,
+    "position_threshold": 2.4,
+    "initial_perturbation": 0.05
+  },
+  "reward": {
+    "alive_bonus": 1.0,
+    "angle_weight": -10.0,
+    "position_weight": -5.0,
+    "velocity_weight": -0.1,
+    "death_penalty": -10.0
+  },
+  "network": {
+    "hidden_layers": [
+      128,
+      64
+    ],
+    "activation": "relu",
+    "initializer": "he_normal"
+  },
+  "training": {
+    "use_target_network": true,
+    "learning_rate": 0.0005,
+    "gamma": 0.99,
+    "batch_size": 64,
+    "replay_buffer_size": 10000,
+    "epsilon_start": 0.0,
+    "epsilon_end": 0.0,
+    "epsilon_decay": 1.0
+  },
+  "visualization": {
+    "fps": 50,
+    "figure_size": [
+      10,
+      6
+    ],
+    "cart_width": 0.4,
+    "cart_height": 0.2,
+    "save_gif": true
+  }
+}
